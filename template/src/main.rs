@@ -13,8 +13,10 @@ mod prelude {
 }
 use crate::nested::plus_three;
 use crate::prelude::*;
+use rand::prelude::*;
 fn main() {
-    println!("Hello, world!");
+    let rd: u8 = random();
+    println!("random number= {}", rd);
     let ms = MyStruct { nombo: 32 };
     println!("{} ", ms.nombo);
     let ns: nestedStruct = nestedStruct { nombo_nested: 94 };
