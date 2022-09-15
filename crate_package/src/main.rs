@@ -1,4 +1,6 @@
 mod my_struct;
+use std::convert::TryInto;
+
 // crate will check for the root path same as src
 use crate::my_struct::{plus_two, MyStruct};
 // use the name of folder, and Rust will check for mod.rs
@@ -14,6 +16,7 @@ mod prelude {
 use crate::nested::plus_three;
 use crate::prelude::*;
 use rand::prelude::*;
+mod bird;
 fn main() {
     let rd: u8 = random();
     println!("random number= {}", rd);
@@ -33,6 +36,8 @@ fn main() {
     println!("a= {}", a);
     let b: u32 = plus_four(x);
     println!("b= {}", b);
+    // let c: u8 = plus_eight(x.try_into().unwrap());
+    // println!("c= {}", c);
 }
 
 fn plus_one(x: u32) -> u32 {
